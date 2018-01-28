@@ -23,7 +23,7 @@ update msg model =
 view model =
     div []
         [ button [] [ text "Add Number" ]
-        , div [] (List.map (\t -> div [] [ text (toString t) ]) model.fruits)
+        , div [] (List.map (\t -> div [] [ text t ]) model.fruits)
         ]
 
 
