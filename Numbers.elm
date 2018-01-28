@@ -17,7 +17,7 @@ type Msg
 update msg model =
     case msg of
         Increment ->
-            model ! []
+            { model | items = model.items } ! []
 
 
 view model =
