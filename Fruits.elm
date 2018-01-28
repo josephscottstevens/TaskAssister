@@ -6,29 +6,29 @@ import Html.Events exposing (..)
 
 
 type alias Model =
-    { items : List Int
+    { fruits : List String
     }
 
 
 type Msg
-    = Increment
+    = AddFruit
 
 
 update msg model =
     case msg of
-        Increment ->
-            { model | items = model.items } ! []
+        AddFruit ->
+            { model | fruits = model.fruits } ! []
 
 
 view model =
     div []
         [ button [] [ text "Add Number" ]
-        , div [] (List.map (\t -> div [] [ text (toString t) ]) model.items)
+        , div [] (List.map (\t -> div [] [ text (toString t) ]) model.fruits)
         ]
 
 
 initialModel =
-    { items = [ 0, 1, 2, 3, 4 ]
+    { fruits = [ "Apple", "Grapefruit", "Banana", "Melon" ]
     }
 
 
