@@ -1,0 +1,9 @@
+{
+  "git.enableSmartCommit": true,
+  "window.zoomLevel": 0,
+  "git.confirmSync": false,
+  "editor.tabSize": 2,
+  "elm.formatOnSave": true,
+  "git.autofetch": true,
+  "explorer.confirmDragAndDrop": false,
+}
