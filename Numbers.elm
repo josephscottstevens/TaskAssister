@@ -1,4 +1,4 @@
-module Main exposing (main)
+module Numbers exposing (main)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -6,7 +6,7 @@ import Html.Events exposing (..)
 
 
 type alias Model =
-    { count : Int
+    { items : List Int
     }
 
 
@@ -17,18 +17,18 @@ type Msg
 update msg model =
     case msg of
         Increment ->
-            { model | count = model.count + 1 } ! []
+            model ! []
 
 
 view model =
     div []
-        [ div [] [ text (toString model.count) ]
-        , button [ onClick Increment ] [ text "Increment" ]
+        [ button [] [ text "Add Number" ]
+        , div [] (List.map (\t -> div [] [ text (toString t) ]) model.items)
         ]
 
 
 initialModel =
-    { count = 0
+    { items = [ 0, 1, 2, 3, 4 ]
     }
 
 
