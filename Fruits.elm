@@ -17,12 +17,12 @@ type Msg
 update msg model =
     case msg of
         AddFruit ->
-            { model | fruits = model.fruits } ! []
+            { model | fruits = "a fruit" :: model.fruits } ! []
 
 
 view model =
     div []
-        [ button [] [ text "Add Number" ]
+        [ button [ onClick AddFruit ] [ text "Add Fruit" ]
         , div [] (List.map (\t -> div [] [ text t ]) model.fruits)
         ]
 
